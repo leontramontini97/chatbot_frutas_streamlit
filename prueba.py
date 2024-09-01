@@ -28,6 +28,7 @@ common_sentences = [
 
 def standard_answer(message_body):
     response_text = ""
+    message_body = message_body.lower()
     if message_body in ["hola", "buenos días", "buenas tardes", "buenas noches"]:
         response_text = "¡Hola! Hablas con Colega, tu asistente virtual 🤖 ¿En qué puedo ayudarte hoy? 🤓"
     elif message_body in ["adiós", "chao"]:
