@@ -74,7 +74,7 @@ def retriever_func(file_path):
 retriever= retriever_func('987987.csv')
 # Main chat application
 def chat():
-    st.write("# Preguntale a Colega")
+    st.write("# Pregúntale a Colega")
     
     # Initialize session state for messages if not already initialized
     if "messages" not in st.session_state:
