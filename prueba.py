@@ -141,8 +141,8 @@ def main():
         unsafe_allow_html=True,
     )
     
-    os.environ["OPENAI_API_KEY"] = st.secrets("OPENAI_API_KEY")
-
+    os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+    
     # Sidebar
     sidebar()
 
