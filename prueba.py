@@ -82,7 +82,7 @@ def chat():
     user_message = st.chat_input("Escribe tu mensaje aquí...")
 
     if user_message:
-        if user_message in common_sentences:
+        if user_message.lower() in common_sentences:
             final_answer = standard_answer(user_message)
         else:
             # Retrieve context and get response from model
