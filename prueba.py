@@ -112,11 +112,11 @@ def chat():
 def sidebar():
     st.sidebar.title("Opciones")
     
-    # Restart button
+    
+     # Restart button
     if st.sidebar.button("Reiniciar conversación"):
         st.session_state.clear()
-        st.experimental_rerun()
-    
+        st.experimental_set_query_params()  # This will reset the session
     # Display CSV content
     if st.sidebar.checkbox("Mostrar base de datos (CSV)"):
         st.sidebar.write("### Contenido del CSV:")
