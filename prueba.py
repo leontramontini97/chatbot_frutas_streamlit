@@ -83,6 +83,12 @@ def chat():
     user_message = st.chat_input("Escribe tu mensaje aquí...")
 
     if user_message:
+        st.session_state.messages.append({"role": "user", "content": user_message})
+
+        with st.chat_message("assistant"):
+            response_placeholder = st.empty()
+            response_placeholder.markdown("🤔 Estoy pensando...")
+
         if user_message.lower() in common_sentences:
             final_answer = standard_answer(user_message)
         else:
@@ -97,9 +103,11 @@ def chat():
             ]
             response = llm(messages)
             final_answer = response.content  # Access the content directly
-        
+
+            response_placeholder.markdown(final_answer)
+
         # Add both the user message and the assistant's response to the conversation history
-        st.session_state.messages.append({"role": "user", "content": user_message})
+        
         st.session_state.messages.append({"role": "assistant", "content": final_answer})
     
     # Display the entire conversation history
