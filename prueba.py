@@ -17,7 +17,7 @@ st.set_page_config(page_title="Colega", layout="wide")
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 # Initialize the language model
-llm = ChatOpenAI(model_name='ft:gpt-4o-mini-2024-07-18:personal::9vW8AJQu', temperature=1, )
+llm = ChatOpenAI(model_name='ft:gpt-4o', temperature=1, )
 
 # Common sentences and predefined responses
 common_sentences = [
